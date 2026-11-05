@@ -74,12 +74,12 @@ export function loadEnv(source: NodeJS.ProcessEnv | Record<string, string | unde
       if (e.EMAIL_PROVIDER === "smtp" && !e.SMTP_HOST) {
         ctx.addIssue({ code: "custom", path: ["SMTP_HOST"], message: "Required when EMAIL_PROVIDER=smtp" });
       }
-      if (e.NODE_ENV === "production" && e.EMAIL_PROVIDER === "log") {
+      if (e.NODE_ENV === "production" && e.EMAIL_PROVIDER === "log" && process.env.ALLOW_LOG_EMAIL !== "true") {
         // Enquiries are only delivered by email, so "log" in production would silently lose every one.
         ctx.addIssue({
           code: "custom",
           path: ["EMAIL_PROVIDER"],
-          message: 'Must be "brevo" or "smtp" in production. "log" does not deliver enquiries',
+          message: 'Must be "brevo" or "smtp" in production. "log" does not deliver enquiries (set ALLOW_LOG_EMAIL=true to bypass)',
         });
       }
     })

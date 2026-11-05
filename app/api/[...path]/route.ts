@@ -9,6 +9,11 @@ async function handle(request: Request): Promise<Response> {
   // Opt out of prerendering: every API call is answered at request time.
   await connection();
 
+  const url = new URL(request.url);
+  if (request.method === "GET" && (url.pathname === "/api/health" || url.pathname.endsWith("/health"))) {
+    return Response.json({ status: "ok" }, { headers: { "Cache-Control": "no-store" } });
+  }
+
   let api;
   try {
     api = getApi();
