@@ -1,6 +1,8 @@
 # Site photos
 
 Add your own photos here. Each one is named after the slot it fills, so no code change is needed.
+Pages are built ahead of time, so after adding or changing a photo run `npm run build` and restart the
+server (in development `npm run dev` picks files up immediately).
 Accepted formats: `.jpg`, `.jpeg`, `.webp`, `.png`, `.avif`. Use at least 1600px on the long edge
 (about 2400px is plenty). Do not bake text or provider logos into the images. Slots with no file show
 a plain navy panel.

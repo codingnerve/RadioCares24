@@ -70,7 +70,7 @@ changing them**; everything else is read at start-up, so restart after changing 
   `/about`, `/contact`, `/faq`, `/privacy-policy`, `/terms-and-conditions`, `/disclaimer`, a custom 404 and
   error page. No refund page: the site takes no payments.
 - **Photos:** each photo has a named slot in `public/images/` (see `public/images/README.md` for names,
-  ratios and where each appears). Drop a file in with the slot's name and it appears; empty slots show a plain
+  ratios and where each appears). Drop a file in with the slot's name, rebuild (`npm run build`) and restart; empty slots show a plain
   navy panel. Use only photos you own or have licensed, with no baked-in text or provider logos.
 - **Contact form:** validated in the browser and again on the server, then emailed to you. Spam defences:
   hidden honeypot field, minimum-fill-time check, per-IP rate limit, duplicate detection (10 minutes, in

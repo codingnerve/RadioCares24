@@ -48,4 +48,20 @@ describe("page copy and contact fallbacks", () => {
     const offenders = files.filter((f) => legacy.test(readFileSync(f, "utf8"))).map((f) => relative(root, f));
     expect(offenders).toEqual([]);
   });
+
+  it("has no leftover playful styling classes or removed components", () => {
+    const patterns: [string, RegExp][] = [
+      ["old teal/coral/cream/sand tokens", /\b(teal|coral)-\d|\b(bg|text|border)-(cream|sand)\b|on-teal/],
+      ["large rounded corners", /rounded-\[[1-9]\d*(\.\d+)?rem\]/],
+      ["pill buttons", /className="[^"]*\bbtn\b[^"]*\brounded-full\b|className="[^"]*\brounded-full\b[^"]*\bbtn\b/],
+      ["decorative blur blobs", /blur-2xl|blur-3xl/],
+      ["removed components", /HeroArt|ChatSteps|SymptomPicker/],
+    ];
+    const offenders: string[] = [];
+    for (const f of sources) {
+      const text = readFileSync(f, "utf8");
+      for (const [label, re] of patterns) if (re.test(text)) offenders.push(`${relative(root, f)}: ${label}`);
+    }
+    expect(offenders).toEqual([]);
+  });
 });
