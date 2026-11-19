@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import * as content from "@/lib/content";
 import { servicePages } from "@/lib/site";
 
-const { services, symptoms, quickChecks, chatSteps, promises, weDo, weDont, generalFaqs } = content;
+const { services, symptoms, quickChecks, processSteps, promises, weDo, weDont, generalFaqs } = content;
 
 describe("content", () => {
   it("has four services with unique slugs, hrefs and accents", () => {
@@ -18,10 +18,13 @@ describe("content", () => {
     expect(symptoms).toHaveLength(4);
   });
 
-  it("has three quick checks and four alternating chat steps", () => {
+  it("has three quick checks and four process steps without timing promises", () => {
     expect(quickChecks).toHaveLength(3);
-    expect(chatSteps).toHaveLength(4);
-    chatSteps.forEach((c, i) => expect(c.from).toBe(i % 2 === 0 ? "you" : "us"));
+    expect(processSteps).toHaveLength(4);
+    for (const step of processSteps) {
+      expect(step.title.trim().length).toBeGreaterThan(0);
+      expect(`${step.title} ${step.text}`).not.toMatch(/within|minutes?|hours?|24|guarantee/i);
+    }
     expect(promises).toHaveLength(4);
     expect(weDo.length).toBeGreaterThanOrEqual(3);
     expect(weDont.length).toBeGreaterThanOrEqual(3);

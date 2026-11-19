@@ -323,23 +323,23 @@ export const quickChecks = [
   },
 ] as const;
 
-/** Chat-bubble version of how it works. */
-export const chatSteps: { from: "you" | "us"; text: string }[] = [
+/** The four steps of how it works. No timings: we don't promise any. */
+export const processSteps: readonly { title: string; text: string }[] = [
   {
-    from: "you",
-    text: "My radio says “acquiring signal” and I'm not sure what to do. It's a 2021 car.",
+    title: "Tell us what the radio is doing",
+    text: "Send the short enquiry form or call. Include your car, what the screen says and anything you've already tried.",
   },
   {
-    from: "us",
-    text: "Thanks, that helps. We'll call you back. Here's what it usually means and two quick checks to try.",
+    title: "We reply with plain guidance",
+    text: "We explain what the problem most likely means and suggest a few quick checks to try, in everyday language.",
   },
   {
-    from: "you",
-    text: "I tried both and it's still stuck. What do I say to my installer?",
+    title: "Try the checks and note the result",
+    text: "Work through the checks at your own pace and write down what changes. You decide what to do at every stage.",
   },
   {
-    from: "us",
-    text: "Here's exactly what to tell them and what to ask them to inspect. After that, it's in their hands, and you'll know what to expect.",
+    title: "Know exactly what to say next",
+    text: "We help you word what to tell your provider or installer, so you only have to explain it once.",
   },
 ];
 
