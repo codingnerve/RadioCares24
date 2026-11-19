@@ -198,10 +198,10 @@ export function EnquiryForm({ variant = "full", defaultCategory }: Props) {
         ref={successRef}
         tabIndex={-1}
         role="status"
-        className="rounded-2xl border border-green-700/30 bg-green-50 p-6 outline-none"
+        className="rounded-md border border-green-700/30 bg-green-50 p-6 outline-none"
       >
         <div className="flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-700 text-white">
+          <span className="flex h-10 w-10 items-center justify-center rounded bg-green-700 text-white">
             <Icon name="check" />
           </span>
           <h3 className="text-xl text-green-900">Enquiry received</h3>
@@ -282,9 +282,9 @@ export function EnquiryForm({ variant = "full", defaultCategory }: Props) {
   return (
     <form onSubmit={onSubmit} noValidate aria-label="Service request" className="space-y-4">
       {telHref && (
-        <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-orange-500/30 bg-orange-100/60 p-4">
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-md border border-orange-500/30 bg-orange-100/60 p-4">
           <div className="flex min-w-[13rem] flex-1 items-center gap-3">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-500 text-[#2a0f08] shadow-sm">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-500 text-navy-950 shadow-sm">
               <Icon name="phone" className="h-5 w-5" />
             </span>
             <div>
@@ -308,7 +308,7 @@ export function EnquiryForm({ variant = "full", defaultCategory }: Props) {
           ref={summaryRef}
           tabIndex={-1}
           role="alert"
-          className="rounded-xl border border-red-700/40 bg-red-50 p-4 text-sm text-red-900 outline-none"
+          className="rounded-md border border-red-700/40 bg-red-50 p-4 text-sm text-red-900 outline-none"
         >
           <p className="font-bold">{serverMessage || "Please fix the following:"}</p>
           {errorList.length > 0 && (
@@ -429,7 +429,7 @@ export function EnquiryForm({ variant = "full", defaultCategory }: Props) {
       </div>
 
       {variant === "compact" ? (
-        <details ref={detailsRef} className="rounded-2xl border border-line bg-paper px-4 py-3">
+        <details ref={detailsRef} className="rounded-md border border-line bg-paper px-4 py-3">
           <summary className="cursor-pointer text-sm font-semibold text-navy-900">
             Add vehicle details (optional)
           </summary>
@@ -445,7 +445,7 @@ export function EnquiryForm({ variant = "full", defaultCategory }: Props) {
           {contactMethods.map((m) => (
             <label
               key={m.value}
-              className="flex min-h-11 cursor-pointer items-center gap-2 rounded-full border border-navy-800 bg-navy-50 px-4 py-2 text-sm font-semibold has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-orange-500"
+              className="flex min-h-11 cursor-pointer items-center gap-2 rounded border border-navy-800 bg-navy-50 px-4 py-2 text-sm font-semibold has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-orange-500"
             >
               <input
                 type="radio"

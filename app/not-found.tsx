@@ -13,7 +13,7 @@ export default function NotFound() {
     <SiteShell>
       <section className="container-page py-20 sm:py-28">
         <p className="eyebrow">Error 404</p>
-        <h1 className="mt-4 max-w-2xl text-4xl sm:text-5xl">Oops, we lost the signal on that page</h1>
+        <h1 className="mt-4 max-w-2xl text-4xl sm:text-5xl">This page could not be found</h1>
         <p className="mt-5 max-w-xl text-lg text-muted">
           The page you were looking for doesn&apos;t exist or has moved. Try one of these instead.
         </p>

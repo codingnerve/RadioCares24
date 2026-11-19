@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Checklist, ClosingCta, PageBanner } from "@/components/blocks";
 import { operatorLine } from "@/components/LegalPage";
+import { Photo } from "@/components/Photo";
 import type { Accent } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -41,7 +42,7 @@ export default function AboutPage() {
     <>
       <PageBanner
         eyebrow="About us"
-        title="A friendly, independent helping hand for car satellite radio"
+        title="An independent help service for in-car satellite radio"
         lead="There's a lot going on behind a satellite radio: the receiver, the antenna, the sky and your provider's account. We help drivers make sense of it."
         crumbs={[{ name: "About", path: "/about" }]}
       />
@@ -65,8 +66,9 @@ export default function AboutPage() {
                 account, and we are not connected to any provider or manufacturer.
               </p>
             </div>
+            <Photo slot="about" className="mt-8 w-full" />
           </div>
-          <div className="card self-start !rounded-[2rem] p-6 sm:p-8">
+          <div className="card self-start p-6 sm:p-8">
             <h2 className="text-2xl">At a glance</h2>
             <dl className="mt-5 space-y-4 text-[0.9375rem]">
               <div>
@@ -102,15 +104,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="px-3 sm:px-4" aria-labelledby="principles-heading">
-        <div className="container-page rounded-[2.5rem] bg-mist !px-6 py-14 sm:!px-12">
+      <section className="bg-paper" aria-labelledby="principles-heading">
+        <div className="container-page py-14">
           <p className="eyebrow">How we work</p>
           <h2 id="principles-heading" className="mt-3 text-3xl sm:text-4xl">
             Four simple principles
           </h2>
           <ul className="mt-8 grid gap-5 sm:grid-cols-2">
             {principles.map((p) => (
-              <li key={p.title} className={`accent-${p.accent} rounded-[2rem] p-6`}>
+              <li key={p.title} className={`accent-${p.accent} rounded-md p-6`}>
                 <h3 className="text-xl !text-navy-950">{p.title}</h3>
                 <p className="mt-2 text-ink/85">{p.text}</p>
               </li>

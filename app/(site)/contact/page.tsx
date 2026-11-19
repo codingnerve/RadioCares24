@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageBanner } from "@/components/blocks";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Icon } from "@/components/Icon";
+import { Photo } from "@/components/Photo";
 import { pageMetadata } from "@/lib/seo";
 import { mailHref, site, telHref } from "@/lib/site";
 
@@ -25,7 +26,7 @@ export default function ContactPage() {
 
       <section className="py-14 sm:py-20">
         <div className="container-page grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:gap-14">
-          <div className="card !rounded-[2rem] p-5 sm:p-8">
+          <div className="card p-5 sm:p-8">
             <h2 className="text-2xl">Send an enquiry</h2>
             <p className="mb-6 mt-2 text-muted">
               All fields are required unless marked optional. We never ask for card numbers or passwords.
@@ -34,7 +35,8 @@ export default function ContactPage() {
           </div>
 
           <aside className="space-y-6" aria-label="Other ways to reach us">
-            <div className="card !rounded-[2rem] p-6">
+            <Photo slot="contact" className="hidden w-full lg:block" />
+            <div className="card p-6">
               <h2 className="text-xl">Prefer to talk?</h2>
               <ul className="mt-4 space-y-4">
                 {telHref && (
@@ -77,7 +79,7 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <div className="rounded-[2rem] bg-mist p-6">
+            <div className="rounded-md bg-mist p-6">
               <h2 className="text-xl">Helpful to include</h2>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-[0.9375rem] text-muted">
                 <li>Vehicle make, model and approximate year</li>
@@ -88,7 +90,7 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <p className="flex gap-3 rounded-[2rem] bg-orange-100 p-5 text-sm text-ink">
+            <p className="flex gap-3 rounded-md bg-orange-100 p-5 text-sm text-ink">
               <Icon name="shield" className="mt-0.5 h-5 w-5 flex-none text-orange-700" />
               <span>
                 <strong>Keep it private.</strong> Never send card numbers or passwords, in the form or by email.
