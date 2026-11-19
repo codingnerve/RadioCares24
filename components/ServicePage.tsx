@@ -11,7 +11,6 @@ export function ServicePage({ service }: { service: ServiceContent }) {
     <>
       <PageBanner
         eyebrow="Help guide"
-        accent={service.accent}
         title={service.h1}
         lead={service.intro}
         crumbs={[{ name: service.title, path: service.href }]}

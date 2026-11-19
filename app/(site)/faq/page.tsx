@@ -21,7 +21,7 @@ export default function FaqPage() {
   return (
     <>
       <JsonLd data={faqLd(all)} />
-      <PageBanner accent="butter"
+      <PageBanner
         eyebrow="FAQ"
         title="Frequently asked questions"
         lead="Straight answers about satellite radio problems and about what RadioCares24 does."

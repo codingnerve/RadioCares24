@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { Icon } from "./Icon";
 import { breadcrumbLd, faqLd, jsonLd } from "@/lib/seo";
-import type { Accent, Faq } from "@/lib/content";
+import { Photo } from "./Photo";
+import type { Faq } from "@/lib/content";
+import type { PhotoSlot } from "@/lib/images";
 import { mailHref, site, telHref } from "@/lib/site";
 
 export function JsonLd({ data }: { data: unknown }) {
@@ -50,7 +52,7 @@ export function SectionHeading({
   return (
     <div className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       <p className="eyebrow">{eyebrow}</p>
-      <h2 id={id} className="mt-3 text-3xl sm:text-[2.6rem]">
+      <h2 id={id} className="mt-3 text-3xl sm:text-4xl">
         {title}
       </h2>
       {lead && <p className="mt-4 text-lg text-muted">{lead}</p>}
@@ -58,7 +60,7 @@ export function SectionHeading({
   );
 }
 
-/** Closing call-to-action: a big rounded teal panel. */
+/** Closing call-to-action: a full-width navy band. */
 export function ClosingCta({
   title = "Still not sure where to start? Just tell us what the radio is doing.",
   text = "Send a short note or call. We'll reply with practical next steps, and tell you honestly what we can and can't help with.",
@@ -67,85 +69,79 @@ export function ClosingCta({
   text?: string;
 }) {
   return (
-    <section aria-labelledby="cta-heading" className="px-3 pb-6 pt-6 sm:px-4">
-      <div className="on-navy container-page relative overflow-hidden rounded-[2.5rem] bg-navy-800 !px-6 py-12 sm:!px-12 sm:py-16">
-        <div aria-hidden="true" className="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-navy-700/60" />
-        <div aria-hidden="true" className="absolute -bottom-24 right-24 h-48 w-48 rounded-full bg-orange-500/25" />
-        <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-          <div className="max-w-2xl">
-            <h2 id="cta-heading" className="text-3xl !text-white sm:text-4xl">
-              {title}
-            </h2>
-            <p className="mt-3 text-lg text-navy-100">{text}</p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/contact" className="btn btn-primary">
-              Send an enquiry
-            </Link>
-            {telHref ? (
-              <a href={telHref} className="btn btn-ghost">
-                <Icon name="phone" className="h-5 w-5" /> {site.phoneDisplay}
-              </a>
-            ) : mailHref ? (
-              <a href={mailHref} className="btn btn-ghost">
-                <Icon name="mail" className="h-5 w-5" /> Email us
-              </a>
-            ) : null}
-          </div>
+    <section aria-labelledby="cta-heading" className="on-navy mt-16 bg-navy-900 py-14 sm:py-16">
+      <div className="container-page flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+        <div className="max-w-2xl">
+          <h2 id="cta-heading" className="text-3xl !text-white sm:text-4xl">
+            {title}
+          </h2>
+          <p className="mt-3 text-lg text-navy-100">{text}</p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/contact" className="btn btn-primary">
+            Send an enquiry
+          </Link>
+          {telHref ? (
+            <a href={telHref} className="btn btn-ghost">
+              <Icon name="phone" className="h-5 w-5" /> {site.phoneDisplay}
+            </a>
+          ) : mailHref ? (
+            <a href={mailHref} className="btn btn-ghost">
+              <Icon name="mail" className="h-5 w-5" /> Email us
+            </a>
+          ) : null}
         </div>
       </div>
     </section>
   );
 }
 
-/** Light banner for inner pages: soft accent panel with blobs and a breadcrumb. */
+/** Navy banner for inner pages: breadcrumb, heading and an optional photo on large screens. */
 export function PageBanner({
   title,
   lead,
   crumbs,
   eyebrow,
-  accent,
+  photo,
 }: {
   title: string;
   lead: string;
   eyebrow?: string;
-  accent?: Accent;
+  photo?: PhotoSlot;
   crumbs: { name: string; path: string }[];
 }) {
   const all = [{ name: "Home", path: "/" }, ...crumbs];
   return (
-    <section className="px-3 pt-4 sm:px-4">
+    <section className="on-navy relative overflow-hidden bg-navy-900">
       <JsonLd data={breadcrumbLd(all)} />
-      <div
-        className={`container-page relative overflow-hidden rounded-[2.5rem] !px-6 py-12 sm:!px-12 sm:py-16 ${
-          accent ? `accent-${accent}` : "bg-mist"
-        }`}
-      >
-        <div aria-hidden="true" className="absolute -right-12 -top-16 h-56 w-56 rounded-full bg-white/50" />
-        <div aria-hidden="true" className="absolute -bottom-20 right-28 h-40 w-40 rounded-full bg-white/35" />
-        <div className="relative">
-          <nav aria-label="Breadcrumb" className="mb-5 text-sm text-muted">
-            <ol className="flex flex-wrap items-center gap-2">
-              {all.map((c, i) => (
-                <li key={c.path} className="flex items-center gap-2">
-                  {i > 0 && <span aria-hidden="true">/</span>}
-                  {i === all.length - 1 ? (
-                    <span aria-current="page" className="font-semibold text-navy-900">
-                      {c.name}
-                    </span>
-                  ) : (
-                    <Link href={c.path} className="underline-offset-4 hover:underline">
-                      {c.name}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ol>
-          </nav>
-          {eyebrow && <p className="eyebrow !bg-white/70 !text-navy-900">{eyebrow}</p>}
-          <h1 className="mt-3 max-w-3xl text-4xl sm:text-5xl">{title}</h1>
-          <p className="mt-5 max-w-2xl text-lg text-ink/85">{lead}</p>
+      {photo && (
+        <div className="absolute inset-y-0 right-0 hidden w-2/5 lg:block" aria-hidden="true">
+          <Photo slot={photo} className="h-full w-full" sizes="40vw" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/40 to-transparent" />
         </div>
+      )}
+      <div className="container-page relative py-12 sm:py-16">
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-navy-100">
+          <ol className="flex flex-wrap items-center gap-2">
+            {all.map((c, i) => (
+              <li key={c.path} className="flex items-center gap-2">
+                {i > 0 && <span aria-hidden="true">/</span>}
+                {i === all.length - 1 ? (
+                  <span aria-current="page" className="font-semibold text-white">
+                    {c.name}
+                  </span>
+                ) : (
+                  <Link href={c.path} className="underline-offset-4 hover:underline">
+                    {c.name}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ol>
+        </nav>
+        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+        <h1 className="mt-3 max-w-3xl text-4xl !text-white sm:text-5xl">{title}</h1>
+        <p className="mt-5 max-w-2xl text-lg text-navy-100">{lead}</p>
       </div>
     </section>
   );
@@ -157,8 +153,8 @@ export function Checklist({ items, tone = "check" }: { items: string[]; tone?: "
       {items.map((item) => (
         <li key={item} className="flex gap-3">
           <span
-            className={`mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full ${
-              tone === "check" ? "bg-navy-100 text-navy-800" : "bg-white text-orange-700 ring-1 ring-line"
+            className={`mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded ${
+              tone === "check" ? "bg-navy-50 text-navy-800" : "bg-white text-orange-700 ring-1 ring-line"
             }`}
             aria-hidden="true"
           >

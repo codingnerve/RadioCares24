@@ -18,7 +18,6 @@ export default function ContactPage() {
     <>
       <PageBanner
         eyebrow="Contact"
-        accent="sky"
         title="Tell us what your radio is doing"
         lead="Tell us the details and we'll call you back to talk it through."
         crumbs={[{ name: "Contact", path: "/contact" }]}
