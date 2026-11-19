@@ -14,7 +14,7 @@ export function DoDont() {
               title="What we do, and what we don't"
               lead="No ratings or big slogans. Just things you can check for yourself on this site."
             />
-            <Photo slot="about" className="mt-8 hidden w-full lg:block" />
+            <Photo slot="about" className="mt-8 hidden w-full rounded-md lg:block" />
           </div>
           <div className="grid gap-5">
             <div className="card p-6 sm:p-8">

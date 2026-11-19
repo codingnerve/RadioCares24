@@ -66,7 +66,7 @@ export default function AboutPage() {
                 account, and we are not connected to any provider or manufacturer.
               </p>
             </div>
-            <Photo slot="about" className="mt-8 w-full" />
+            <Photo slot="about" className="mt-8 w-full rounded-md" />
           </div>
           <div className="card self-start p-6 sm:p-8">
             <h2 className="text-2xl">At a glance</h2>

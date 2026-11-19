@@ -23,6 +23,7 @@ export default function FaqPage() {
       <JsonLd data={faqLd(all)} />
       <PageBanner
         eyebrow="FAQ"
+        photo="banner-resources"
         title="Frequently asked questions"
         lead="Straight answers about satellite radio problems and about what RadioCares24 does."
         crumbs={[{ name: "FAQ", path: "/faq" }]}

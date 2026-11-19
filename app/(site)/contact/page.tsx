@@ -35,7 +35,7 @@ export default function ContactPage() {
           </div>
 
           <aside className="space-y-6" aria-label="Other ways to reach us">
-            <Photo slot="contact" className="hidden w-full lg:block" />
+            <Photo slot="contact" className="hidden w-full rounded-md lg:block" />
             <div className="card p-6">
               <h2 className="text-xl">Prefer to talk?</h2>
               <ul className="mt-4 space-y-4">

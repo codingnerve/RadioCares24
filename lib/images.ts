@@ -40,9 +40,9 @@ const extensions = ["jpg", "jpeg", "webp", "png", "avif"] as const;
  * Public path of the photo for a slot, or null when no file has been added yet.
  * `dir` is only overridden by tests, so they never touch the real public/images folder.
  */
-export function findPhoto(slot: PhotoSlot, dir = join(process.cwd(), "public", "images")): string | null {
+export function findPhoto(slot: PhotoSlot, dir = join(/*turbopackIgnore: true*/ process.cwd(), "public", "images")): string | null {
   for (const ext of extensions) {
-    if (existsSync(join(dir, `${slot}.${ext}`))) return `/images/${slot}.${ext}`;
+    if (existsSync(join(/*turbopackIgnore: true*/ dir, `${slot}.${ext}`))) return `/images/${slot}.${ext}`;
   }
   return null;
 }
