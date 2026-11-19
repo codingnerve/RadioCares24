@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Icon } from "./Icon";
 import { Logo } from "./Logo";
-import { companyPages, legalPages, mailHref, servicePages, site, telHref } from "@/lib/site";
+import { companyPages, infoPages, legalPages, mailHref, servicePages, site, telHref } from "@/lib/site";
 
 function Column({ title, links }: { title: string; links: readonly { href: string; label: string }[] }) {
   return (
     <nav aria-label={title}>
-      <h2 className="mb-3 font-display text-base font-semibold !text-white">{title}</h2>
-      <ul className="space-y-2">
+      <h2 className="mb-4 text-base font-semibold !text-white">{title}</h2>
+      <ul className="space-y-2.5 text-sm">
         {links.map((l) => (
           <li key={l.href}>
             <Link href={l.href} className="text-navy-100 hover:text-white hover:underline">
@@ -23,7 +23,7 @@ function Column({ title, links }: { title: string; links: readonly { href: strin
 export function Footer() {
   const hasAddress = site.addressLines.length > 0 || Boolean(site.legalName);
   return (
-    <footer className="on-navy mt-8 rounded-t-[2.5rem] bg-navy-900 text-navy-100 sm:rounded-t-[3.5rem]">
+    <footer className="on-navy mt-16 border-t-4 border-orange-500 bg-navy-900 text-navy-100">
       <div className="container-page grid gap-10 pb-10 pt-14 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <Logo tone="light" />
@@ -33,10 +33,10 @@ export function Footer() {
             card numbers or passwords.
           </p>
         </div>
-        <Column title="Help guides" links={servicePages} />
-        <Column title="About" links={companyPages} />
+        <Column title="Services" links={servicePages} />
+        <Column title="Company" links={[...infoPages.slice(1), ...companyPages]} />
         <div>
-          <h2 className="mb-3 font-display text-base font-semibold !text-white">Get in touch</h2>
+          <h2 className="mb-4 text-base font-semibold !text-white">Get in touch</h2>
           <ul className="space-y-3 text-sm">
             {telHref && (
               <li>
@@ -73,14 +73,14 @@ export function Footer() {
               </li>
             )}
             <li>
-              <Link href="/contact" className="btn btn-light !min-h-11">
+              <Link href="/contact" className="btn btn-primary !min-h-11">
                 Send an enquiry
               </Link>
             </li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/15">
         <div
           className={`container-page flex flex-col gap-3 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between ${telHref ? "pb-28 md:pb-6" : "pb-6"}`}
         >

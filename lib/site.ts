@@ -61,6 +61,21 @@ export const servicePages = [
   { href: "/subscription-support", label: "Subscription enquiries" },
 ] as const;
 
+/** Overview pages that sit beside the four guides. */
+export const infoPages = [
+  { href: "/services", label: "Services" },
+  { href: "/how-it-works", label: "How it works" },
+  { href: "/resources", label: "Resources" },
+] as const;
+
+/** Top-level navigation in the header. The Services entry opens a menu of the four guides. */
+export const primaryNav = [
+  ...infoPages,
+  { href: "/about", label: "About" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
 export const companyPages = [
   { href: "/about", label: "About us" },
   { href: "/faq", label: "FAQ" },

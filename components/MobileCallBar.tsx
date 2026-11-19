@@ -2,8 +2,8 @@ import { Icon } from "./Icon";
 import { site, telHref } from "@/lib/site";
 
 /**
- * Floating call pill for small screens. Hidden by CSS while a form field has focus (see globals.css),
- * and the page reserves matching bottom padding, so it never covers inputs.
+ * Call bar for small screens. Hidden by CSS while a form field has focus (see globals.css),
+ * and the footer reserves matching bottom padding, so it never covers inputs.
  */
 export function MobileCallBar() {
   if (!telHref) return null;
