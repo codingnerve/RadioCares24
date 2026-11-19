@@ -6,10 +6,10 @@ import { site, telHref } from "@/lib/site";
 export function Hero() {
   return (
     <section className="on-navy relative isolate overflow-hidden bg-navy-900">
-      <Photo slot="hero" preload sizing="parent" className="absolute inset-0 -z-10" sizes="100vw" />
+      <Photo slot="hero" alt="" preload sizing="parent" className="absolute inset-0 -z-10" sizes="100vw" />
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950/95 via-navy-900/80 to-navy-900/35"
+        className="absolute inset-0 -z-10 bg-navy-950/85 lg:bg-transparent lg:bg-gradient-to-r lg:from-navy-950/95 lg:via-navy-900/80 lg:to-navy-900/35"
       />
       <div className="container-page py-20 sm:py-28 lg:py-32">
         <div className="max-w-2xl animate-rise">

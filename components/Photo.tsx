@@ -28,7 +28,8 @@ export function Photo({
 }: PhotoProps) {
   const src = findPhoto(slot);
   const byRatio = sizing === "slot";
-  const wrapperClass = `relative overflow-hidden bg-navy-900 ${byRatio ? "w-full" : ""} ${className}`;
+  // Parent mode leaves positioning to the caller (e.g. `absolute inset-0`); adding `relative` here would override it.
+  const wrapperClass = `overflow-hidden bg-navy-900 ${byRatio ? "relative w-full" : ""} ${className}`;
   const style = byRatio ? { aspectRatio: photoSlots[slot].ratio } : undefined;
 
   if (!src) {
