@@ -14,7 +14,7 @@ const toTelNumber = (value: string) => value.replace(/[^\d+]/g, "");
 const phoneRaw =
   process.env.NEXT_PUBLIC_SUPPORT_PHONE !== undefined
     ? clean(process.env.NEXT_PUBLIC_SUPPORT_PHONE)
-    : "+18335957726";
+    : "+18335814426";
 const phone = toTelNumber(phoneRaw);
 
 /**
@@ -39,7 +39,7 @@ export const site = {
   phoneDisplay:
     (process.env.NEXT_PUBLIC_SUPPORT_PHONE_DISPLAY !== undefined
       ? clean(process.env.NEXT_PUBLIC_SUPPORT_PHONE_DISPLAY)
-      : "1-833-595-7726") || phoneRaw,
+      : "1-833-581-4426") || phoneRaw,
   email: clean(process.env.NEXT_PUBLIC_SUPPORT_EMAIL),
   hours: clean(process.env.NEXT_PUBLIC_SUPPORT_HOURS),
   legalName: clean(process.env.NEXT_PUBLIC_BUSINESS_LEGAL_NAME),
