@@ -23,7 +23,7 @@ export function Logo({ tone = "dark", className = "" }: { tone?: "dark" | "light
     <Link
       href="/"
       aria-label={`${site.name} home`}
-      className={`inline-flex items-center rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral-500 ${className}`}
+      className={`inline-flex items-center rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 ${className}`}
     >
       <Image
         src={light ? "/logo-light.png" : "/logo.png"}

@@ -40,9 +40,9 @@ export default function ContactPage() {
               <ul className="mt-4 space-y-4">
                 {telHref && (
                   <li className="flex gap-3">
-                    <Icon name="phone" className="mt-0.5 h-5 w-5 flex-none text-coral-700" />
+                    <Icon name="phone" className="mt-0.5 h-5 w-5 flex-none text-orange-700" />
                     <span>
-                      <a href={telHref} className="block font-display text-lg font-semibold text-teal-900 hover:underline">
+                      <a href={telHref} className="block font-display text-lg font-semibold text-navy-900 hover:underline">
                         {site.phoneDisplay}
                       </a>
                       {site.hours && <span className="text-sm text-muted">{site.hours}</span>}
@@ -51,17 +51,17 @@ export default function ContactPage() {
                 )}
                 {mailHref && (
                   <li className="flex gap-3">
-                    <Icon name="mail" className="mt-0.5 h-5 w-5 flex-none text-coral-700" />
-                    <a href={mailHref} className="font-semibold text-teal-900 hover:underline">
+                    <Icon name="mail" className="mt-0.5 h-5 w-5 flex-none text-orange-700" />
+                    <a href={mailHref} className="font-semibold text-navy-900 hover:underline">
                       {site.email}
                     </a>
                   </li>
                 )}
                 {hasAddress && (
                   <li className="flex gap-3">
-                    <Icon name="pin" className="mt-0.5 h-5 w-5 flex-none text-coral-700" />
+                    <Icon name="pin" className="mt-0.5 h-5 w-5 flex-none text-orange-700" />
                     <address className="text-sm not-italic text-muted">
-                      <strong className="block text-teal-900">{site.legalName || site.name}</strong>
+                      <strong className="block text-navy-900">{site.legalName || site.name}</strong>
                       {site.addressLines.map((line) => (
                         <span key={line} className="block">
                           {line}
@@ -78,7 +78,7 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <div className="rounded-[2rem] bg-sand p-6">
+            <div className="rounded-[2rem] bg-mist p-6">
               <h2 className="text-xl">Helpful to include</h2>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-[0.9375rem] text-muted">
                 <li>Vehicle make, model and approximate year</li>
@@ -89,8 +89,8 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <p className="flex gap-3 rounded-[2rem] bg-coral-100 p-5 text-sm text-ink">
-              <Icon name="shield" className="mt-0.5 h-5 w-5 flex-none text-coral-700" />
+            <p className="flex gap-3 rounded-[2rem] bg-orange-100 p-5 text-sm text-ink">
+              <Icon name="shield" className="mt-0.5 h-5 w-5 flex-none text-orange-700" />
               <span>
                 <strong>Keep it private.</strong> Never send card numbers or passwords, in the form or by email.
                 We&apos;ll never ask for them.

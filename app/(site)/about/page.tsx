@@ -70,18 +70,18 @@ export default function AboutPage() {
             <h2 className="text-2xl">At a glance</h2>
             <dl className="mt-5 space-y-4 text-[0.9375rem]">
               <div>
-                <dt className="font-display font-semibold text-teal-900">What we do</dt>
+                <dt className="font-display font-semibold text-navy-900">What we do</dt>
                 <dd className="text-muted">Guidance on activation, signal, channels and plan questions.</dd>
               </div>
               <div>
-                <dt className="font-display font-semibold text-teal-900">What we don&apos;t do</dt>
+                <dt className="font-display font-semibold text-navy-900">What we don&apos;t do</dt>
                 <dd className="text-muted">Activate radios, change plans or repair hardware.</dd>
               </div>
               <div>
-                <dt className="font-display font-semibold text-teal-900">How to reach us</dt>
+                <dt className="font-display font-semibold text-navy-900">How to reach us</dt>
                 <dd className="text-muted">
                   The{" "}
-                  <Link href="/contact" className="font-semibold text-coral-700 underline underline-offset-2">
+                  <Link href="/contact" className="font-semibold text-orange-700 underline underline-offset-2">
                     enquiry form
                   </Link>
                   {site.phoneDisplay && <> or by phone on {site.phoneDisplay}</>}.
@@ -89,7 +89,7 @@ export default function AboutPage() {
               </div>
               {(site.legalName || site.address) && (
                 <div>
-                  <dt className="font-display font-semibold text-teal-900">
+                  <dt className="font-display font-semibold text-navy-900">
                     {site.legalName ? "Operated by" : "Our address"}
                   </dt>
                   <dd className="text-muted">
@@ -103,7 +103,7 @@ export default function AboutPage() {
       </section>
 
       <section className="px-3 sm:px-4" aria-labelledby="principles-heading">
-        <div className="container-page rounded-[2.5rem] bg-sand !px-6 py-14 sm:!px-12">
+        <div className="container-page rounded-[2.5rem] bg-mist !px-6 py-14 sm:!px-12">
           <p className="eyebrow">How we work</p>
           <h2 id="principles-heading" className="mt-3 text-3xl sm:text-4xl">
             Four simple principles
@@ -111,7 +111,7 @@ export default function AboutPage() {
           <ul className="mt-8 grid gap-5 sm:grid-cols-2">
             {principles.map((p) => (
               <li key={p.title} className={`accent-${p.accent} rounded-[2rem] p-6`}>
-                <h3 className="text-xl !text-teal-950">{p.title}</h3>
+                <h3 className="text-xl !text-navy-950">{p.title}</h3>
                 <p className="mt-2 text-ink/85">{p.text}</p>
               </li>
             ))}
@@ -128,7 +128,7 @@ export default function AboutPage() {
             <p className="mt-4 text-lg text-muted">
               It goes straight to our team&apos;s inbox and is used only to reply to you. This website keeps no copy of
               it. The{" "}
-              <Link href="/privacy-policy" className="font-semibold text-coral-700 underline underline-offset-2">
+              <Link href="/privacy-policy" className="font-semibold text-orange-700 underline underline-offset-2">
                 privacy policy
               </Link>{" "}
               explains what we keep in our inbox, for how long and how to ask us to delete it.

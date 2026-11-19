@@ -10,7 +10,7 @@ function Column({ title, links }: { title: string; links: readonly { href: strin
       <ul className="space-y-2">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="text-teal-100 hover:text-white hover:underline">
+            <Link href={l.href} className="text-navy-100 hover:text-white hover:underline">
               {l.label}
             </Link>
           </li>
@@ -23,7 +23,7 @@ function Column({ title, links }: { title: string; links: readonly { href: strin
 export function Footer() {
   const hasAddress = site.addressLines.length > 0 || Boolean(site.legalName);
   return (
-    <footer className="on-teal mt-8 rounded-t-[2.5rem] bg-teal-900 text-teal-100 sm:rounded-t-[3.5rem]">
+    <footer className="on-navy mt-8 rounded-t-[2.5rem] bg-navy-900 text-navy-100 sm:rounded-t-[3.5rem]">
       <div className="container-page grid gap-10 pb-10 pt-14 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <Logo tone="light" />

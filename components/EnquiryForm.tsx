@@ -208,7 +208,7 @@ export function EnquiryForm({ variant = "full", defaultCategory }: Props) {
         </div>
         <p className="mt-3 text-green-950">
           Thank you. We&apos;ll call you directly at{" "}
-          <strong className="font-semibold text-teal-950">{values.phone || "your number"}</strong> as soon as we can.
+          <strong className="font-semibold text-navy-950">{values.phone || "your number"}</strong> as soon as we can.
           {reference && (
             <>
               {" "}
@@ -282,13 +282,13 @@ export function EnquiryForm({ variant = "full", defaultCategory }: Props) {
   return (
     <form onSubmit={onSubmit} noValidate aria-label="Service request" className="space-y-4">
       {telHref && (
-        <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-coral-500/30 bg-coral-100/60 p-4">
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-orange-500/30 bg-orange-100/60 p-4">
           <div className="flex min-w-[13rem] flex-1 items-center gap-3">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-coral-500 text-[#2a0f08] shadow-sm">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-500 text-[#2a0f08] shadow-sm">
               <Icon name="phone" className="h-5 w-5" />
             </span>
             <div>
-              <p className="font-display text-sm font-bold text-teal-950 sm:text-base">Prefer to call directly?</p>
+              <p className="font-display text-sm font-bold text-navy-950 sm:text-base">Prefer to call directly?</p>
               <p className="text-xs text-muted">Skip the form and talk to our team right away</p>
             </div>
           </div>
@@ -429,8 +429,8 @@ export function EnquiryForm({ variant = "full", defaultCategory }: Props) {
       </div>
 
       {variant === "compact" ? (
-        <details ref={detailsRef} className="rounded-2xl border border-line bg-cream px-4 py-3">
-          <summary className="cursor-pointer text-sm font-semibold text-teal-900">
+        <details ref={detailsRef} className="rounded-2xl border border-line bg-paper px-4 py-3">
+          <summary className="cursor-pointer text-sm font-semibold text-navy-900">
             Add vehicle details (optional)
           </summary>
           <div className="mt-4">{vehicleFields}</div>
@@ -445,7 +445,7 @@ export function EnquiryForm({ variant = "full", defaultCategory }: Props) {
           {contactMethods.map((m) => (
             <label
               key={m.value}
-              className="flex min-h-11 cursor-pointer items-center gap-2 rounded-full border border-teal-800 bg-teal-50 px-4 py-2 text-sm font-semibold has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-coral-500"
+              className="flex min-h-11 cursor-pointer items-center gap-2 rounded-full border border-navy-800 bg-navy-50 px-4 py-2 text-sm font-semibold has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-orange-500"
             >
               <input
                 type="radio"
@@ -453,9 +453,9 @@ export function EnquiryForm({ variant = "full", defaultCategory }: Props) {
                 value={m.value}
                 checked={values.preferredContact === m.value}
                 onChange={() => set("preferredContact", m.value)}
-                className="h-4 w-4 accent-teal-800"
+                className="h-4 w-4 accent-navy-800"
               />
-              <Icon name="phone" className="h-4 w-4 text-coral-700" />
+              <Icon name="phone" className="h-4 w-4 text-orange-700" />
               {m.label}
             </label>
           ))}
@@ -471,13 +471,13 @@ export function EnquiryForm({ variant = "full", defaultCategory }: Props) {
           <input
             {...fieldProps("consent")}
             type="checkbox"
-            className="mt-1 h-5 w-5 flex-none accent-teal-800"
+            className="mt-1 h-5 w-5 flex-none accent-navy-800"
             checked={values.consent}
             onChange={(e) => set("consent", e.target.checked)}
           />
           <span>
             I&apos;ve read the{" "}
-            <Link href="/privacy-policy" className="font-semibold text-coral-700 underline underline-offset-2">
+            <Link href="/privacy-policy" className="font-semibold text-orange-700 underline underline-offset-2">
               privacy policy
             </Link>{" "}
             and agree that RadioCares24 may use these details to reply to my enquiry.
@@ -504,7 +504,7 @@ export function EnquiryForm({ variant = "full", defaultCategory }: Props) {
       <button type="submit" className="btn btn-primary w-full sm:w-auto" disabled={sending} aria-busy={sending}>
         {sending ? (
           <>
-            <span className="h-4 w-4 animate-spin rounded-full border-2 border-teal-950 border-t-transparent" aria-hidden="true" />
+            <span className="h-4 w-4 animate-spin rounded-full border-2 border-navy-950 border-t-transparent" aria-hidden="true" />
             Sending…
           </>
         ) : (

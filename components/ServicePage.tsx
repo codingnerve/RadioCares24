@@ -46,7 +46,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
                     <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/85 font-display font-bold">
                       {i + 1}
                     </span>
-                    <h3 className="mt-4 text-lg !text-teal-950">{b.title}</h3>
+                    <h3 className="mt-4 text-lg !text-navy-950">{b.title}</h3>
                     <p className="mt-2 text-[0.9375rem] text-ink/85">{b.text}</p>
                   </li>
                 ))}
@@ -60,7 +60,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
                   <li key={s} className="card relative !rounded-[1.5rem] p-5 pt-8">
                     <span
                       aria-hidden="true"
-                      className="absolute -top-4 left-5 flex h-9 w-9 items-center justify-center rounded-full bg-coral-500 font-display font-bold text-[#2a0f08]"
+                      className="absolute -top-4 left-5 flex h-9 w-9 items-center justify-center rounded-full bg-orange-500 font-display font-bold text-[#2a0f08]"
                     >
                       {i + 1}
                     </span>
@@ -70,7 +70,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
               </ol>
             </div>
 
-            <div className="rounded-[2rem] bg-sand p-6 sm:p-8">
+            <div className="rounded-[2rem] bg-mist p-6 sm:p-8">
               <h2 className="text-xl">What we can&apos;t do</h2>
               <p className="mt-1 text-sm text-muted">So there are no surprises.</p>
               <div className="mt-4">
@@ -94,7 +94,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
       </section>
 
       <section className="px-3 sm:px-4" aria-labelledby="faq-heading">
-        <div className="container-page grid gap-10 rounded-[2.5rem] bg-teal-50 !px-6 py-14 sm:!px-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
+        <div className="container-page grid gap-10 rounded-[2.5rem] bg-navy-50 !px-6 py-14 sm:!px-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
           <div>
             <p className="eyebrow">FAQ</p>
             <h2 id="faq-heading" className="mt-3 text-3xl">
@@ -120,7 +120,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/85">
                     <Icon name={o.icon} className="h-5 w-5" />
                   </span>
-                  <span className="text-teal-950 group-hover:underline">{o.title}</span>
+                  <span className="text-navy-950 group-hover:underline">{o.title}</span>
                 </Link>
               </li>
             ))}

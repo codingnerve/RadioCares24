@@ -9,7 +9,7 @@ import { services } from "@/lib/content";
 import { companyPages, site, telHref } from "@/lib/site";
 
 const linkClass =
-  "rounded-full px-4 py-2 font-display text-[0.9375rem] font-semibold text-teal-900 hover:bg-teal-50 aria-[current=page]:bg-teal-100";
+  "rounded-full px-4 py-2 font-display text-[0.9375rem] font-semibold text-navy-900 hover:bg-navy-50 aria-[current=page]:bg-navy-100";
 
 /** Floating pill header: logo, guides menu, company links and the call button. */
 export function Header() {
@@ -78,7 +78,7 @@ export function Header() {
                       <Link
                         href={s.href}
                         aria-current={current(s.href)}
-                        className="flex items-center gap-3 rounded-2xl px-2 py-2 font-display font-semibold text-teal-900 hover:bg-cream aria-[current=page]:bg-cream"
+                        className="flex items-center gap-3 rounded-2xl px-2 py-2 font-display font-semibold text-navy-900 hover:bg-paper aria-[current=page]:bg-paper"
                       >
                         <span className={`accent-${s.accent} flex h-9 w-9 flex-none items-center justify-center rounded-xl`}>
                           <Icon name={s.icon} className="h-5 w-5" />
@@ -117,7 +117,7 @@ export function Header() {
             <button
               ref={toggleRef}
               type="button"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-teal-50 text-teal-900 hover:bg-teal-100 lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-navy-50 text-navy-900 hover:bg-navy-100 lg:hidden"
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -141,7 +141,7 @@ export function Header() {
                   <Link
                     href={s.href}
                     aria-current={current(s.href)}
-                    className="flex items-center gap-3 rounded-2xl px-2 py-2.5 font-display font-semibold text-teal-900 hover:bg-cream aria-[current=page]:bg-cream"
+                    className="flex items-center gap-3 rounded-2xl px-2 py-2.5 font-display font-semibold text-navy-900 hover:bg-paper aria-[current=page]:bg-paper"
                   >
                     <span className={`accent-${s.accent} flex h-10 w-10 flex-none items-center justify-center rounded-xl`}>
                       <Icon name={s.icon} className="h-5 w-5" />

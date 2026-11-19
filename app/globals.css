@@ -1,71 +1,53 @@
 @import "tailwindcss";
-@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/source-serif-4";
 @import "@fontsource-variable/dm-sans";
 
-/* Design tokens: warm cream, deep teal, a single coral accent, and four soft guide colours. */
+/* Design tokens: navy and orange taken from the logo, on white and cool grey. */
 @theme {
   --font-sans: "DM Sans Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: "Bricolage Grotesque Variable", "DM Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Source Serif 4 Variable", "Source Serif 4", Georgia, "Times New Roman", serif;
 
-  --color-cream: #fbf6ec;
-  --color-sand: #f2e9d8;
-  --color-teal-950: #052f2d;
-  --color-teal-900: #083f3d;
-  --color-teal-800: #0e5a57;
-  --color-teal-700: #1b7370;
-  --color-teal-100: #d3ebe8;
-  --color-teal-50: #eaf5f3;
+  --color-paper: #f6f8fb;
+  --color-mist: #eaeff6;
+  --color-navy-950: #071a38;
+  --color-navy-900: #0b2a55;
+  --color-navy-800: #12396f;
+  --color-navy-700: #1d4c8c;
+  --color-navy-100: #dbe5f3;
+  --color-navy-50: #eef3fa;
 
-  --color-coral-500: #ff6a4d;
-  --color-coral-600: #f0553a;
-  --color-coral-700: #b8331a; /* text-safe on cream */
-  --color-coral-100: #ffe3dc;
+  --color-orange-500: #f26a0c;
+  --color-orange-600: #d95500;
+  --color-orange-700: #b04200; /* text-safe on white */
+  --color-orange-100: #fdebd9;
 
-  --color-sage: #dff0e0;
-  --color-sage-ink: #1f6b3a;
-  --color-sky: #dcecf8;
-  --color-sky-ink: #1d5d8f;
-  --color-butter: #fbefc6;
-  --color-butter-ink: #7a5600;
-  --color-blush: #fbdcd6;
-  --color-blush-ink: #a3402d;
+  /* Legacy guide accent names (kept so the Accent data type stays valid): now navy / orange tints. */
+  --color-sage-bg: #e8eef7;
+  --color-sage-ink: #12396f;
+  --color-sky-bg: #dde8f5;
+  --color-sky-ink: #0b2a55;
+  --color-butter-bg: #fdebd9;
+  --color-butter-ink: #8a3400;
+  --color-blush-bg: #fbe0cf;
+  --color-blush-ink: #8a3400;
 
-  --color-ink: #0f2e2c;
-  --color-muted: #3f5a58; /* 7:1 on cream */
-  --color-line: #e3d9c5;
+  --color-ink: #0f1f3a;
+  --color-muted: #4a5a73;
+  --color-line: #d5dde9;
 
-  --shadow-soft: 0 1px 2px rgb(8 63 61 / 0.05), 0 12px 32px -14px rgb(8 63 61 / 0.22);
-  --shadow-pop: 0 2px 4px rgb(8 63 61 / 0.08), 0 22px 44px -18px rgb(8 63 61 / 0.35);
+  --shadow-soft: 0 1px 2px rgb(11 42 85 / 0.06), 0 6px 18px -8px rgb(11 42 85 / 0.18);
+  --shadow-pop: 0 2px 4px rgb(11 42 85 / 0.08), 0 16px 32px -16px rgb(11 42 85 / 0.3);
 
-  --animate-rise: rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  --animate-float: float 7s ease-in-out infinite;
-  --animate-wave: wave 2.6s ease-out infinite;
+  --animate-rise: rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 
   @keyframes rise {
     from {
       opacity: 0;
-      transform: translateY(14px);
+      transform: translateY(10px);
     }
     to {
       opacity: 1;
       transform: none;
-    }
-  }
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
-  }
-  @keyframes wave {
-    0% {
-      opacity: 0.9;
-    }
-    100% {
-      opacity: 0.1;
     }
   }
 }
@@ -73,11 +55,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 7rem;
+    scroll-padding-top: 6rem;
     -webkit-text-size-adjust: 100%;
   }
   body {
-    background: var(--color-cream);
+    background: #fff;
     color: var(--color-ink);
     font-family: var(--font-sans);
     line-height: 1.65;
@@ -88,29 +70,29 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    color: var(--color-teal-900);
-    font-weight: 700;
-    line-height: 1.12;
-    letter-spacing: -0.02em;
+    color: var(--color-navy-900);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
     text-wrap: balance;
   }
   p {
     text-wrap: pretty;
   }
   :focus-visible {
-    outline: 3px solid var(--color-coral-500);
+    outline: 3px solid var(--color-orange-500);
     outline-offset: 3px;
-    border-radius: 0.5rem;
+    border-radius: 2px;
   }
   ::selection {
-    background: var(--color-coral-100);
+    background: var(--color-orange-100);
   }
 }
 
 @layer components {
   .container-page {
     width: 100%;
-    max-width: 70rem;
+    max-width: 72rem;
     margin-inline: auto;
     padding-inline: 1.25rem;
   }
@@ -120,23 +102,20 @@
     }
   }
 
-  /* Small friendly chip above headings. */
+  /* Small uppercase label above headings. */
   .eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.25rem 0.8rem;
-    border-radius: 999px;
-    background: var(--color-butter);
-    color: var(--color-butter-ink);
-    font-family: var(--font-display);
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: 0;
+    color: var(--color-orange-700);
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
-  .on-teal .eyebrow {
-    background: rgb(255 255 255 / 0.12);
-    color: #ffd9cf;
+  .on-navy .eyebrow {
+    color: var(--color-orange-500);
   }
 
   .btn {
@@ -146,8 +125,8 @@
     gap: 0.5rem;
     min-height: 3rem;
     padding: 0.65rem 1.5rem;
-    border-radius: 999px;
-    font-family: var(--font-display);
+    border-radius: 6px;
+    font-family: var(--font-sans);
     font-weight: 600;
     font-size: 1rem;
     line-height: 1.2;
@@ -157,72 +136,66 @@
     transition:
       background-color 0.15s,
       border-color 0.15s,
-      color 0.15s,
-      transform 0.15s,
-      box-shadow 0.15s;
-  }
-  .btn:hover:not(:disabled) {
-    transform: translateY(-1px);
+      color 0.15s;
   }
   .btn:disabled {
     cursor: not-allowed;
     opacity: 0.65;
   }
   .btn-primary {
-    background: var(--color-coral-500);
-    color: #2a0f08;
-    box-shadow: 0 8px 20px -10px rgb(255 106 77 / 0.9);
+    background: var(--color-orange-500);
+    color: var(--color-navy-950);
   }
   .btn-primary:hover:not(:disabled) {
-    background: var(--color-coral-600);
+    background: var(--color-orange-600);
   }
   .btn-ghost {
     background: transparent;
-    color: var(--color-teal-900);
-    border-color: var(--color-teal-800);
+    color: var(--color-navy-900);
+    border-color: var(--color-navy-900);
   }
   .btn-ghost:hover {
-    background: var(--color-teal-800);
+    background: var(--color-navy-900);
     color: #fff;
   }
   .btn-light {
     background: #fff;
-    color: var(--color-teal-900);
+    color: var(--color-navy-900);
   }
   .btn-light:hover {
-    background: var(--color-cream);
+    background: var(--color-navy-50);
   }
-  .on-teal .btn-ghost {
+  .on-navy .btn-ghost {
     color: #fff;
-    border-color: rgb(255 255 255 / 0.6);
+    border-color: rgb(255 255 255 / 0.65);
   }
-  .on-teal .btn-ghost:hover {
+  .on-navy .btn-ghost:hover {
     background: #fff;
-    color: var(--color-teal-900);
+    color: var(--color-navy-900);
   }
 
   .card {
     background: #fff;
     border: 1px solid var(--color-line);
-    border-radius: 1.75rem;
+    border-radius: 6px;
     box-shadow: var(--shadow-soft);
   }
 
-  /* Accent surfaces for the four guides. */
+  /* Tinted surfaces for the four guides (legacy names). */
   .accent-sage {
-    background: var(--color-sage);
+    background: var(--color-sage-bg);
     color: var(--color-sage-ink);
   }
   .accent-sky {
-    background: var(--color-sky);
+    background: var(--color-sky-bg);
     color: var(--color-sky-ink);
   }
   .accent-butter {
-    background: var(--color-butter);
+    background: var(--color-butter-bg);
     color: var(--color-butter-ink);
   }
   .accent-blush {
-    background: var(--color-blush);
+    background: var(--color-blush-bg);
     color: var(--color-blush-ink);
   }
 
@@ -230,16 +203,16 @@
     display: block;
     font-size: 0.9375rem;
     font-weight: 600;
-    color: var(--color-teal-900);
+    color: var(--color-navy-900);
     margin-bottom: 0.375rem;
   }
   .field-input {
     width: 100%;
     min-height: 3rem;
-    padding: 0.65rem 1rem;
+    padding: 0.65rem 0.9rem;
     background: #fff;
-    border: 1.5px solid #a9b8a9;
-    border-radius: 1rem;
+    border: 1.5px solid #8a9ab3;
+    border-radius: 4px;
     color: var(--color-ink);
     font-size: 1rem; /* 16px avoids iOS zoom on focus */
     transition:
@@ -247,15 +220,15 @@
       box-shadow 0.15s;
   }
   .field-input::placeholder {
-    color: #587270; /* 5:1 on white */
+    color: #5b6b85; /* 5:1 on white */
   }
   .field-input:hover {
-    border-color: var(--color-teal-700);
+    border-color: var(--color-navy-700);
   }
   .field-input:focus-visible {
     outline: none;
-    border-color: var(--color-teal-800);
-    box-shadow: 0 0 0 4px rgb(255 106 77 / 0.35);
+    border-color: var(--color-navy-800);
+    box-shadow: 0 0 0 3px rgb(242 106 12 / 0.45);
   }
   .field-input[aria-invalid="true"] {
     border-color: #b42318;
@@ -267,31 +240,30 @@
     color: #b42318;
   }
 
-  /* Native disclosure accordion, no JS needed. Each item is its own soft pill-card. */
+  /* Native disclosure accordion, no JS needed. */
   .accordion {
     display: grid;
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
   .accordion details {
     background: #fff;
     border: 1px solid var(--color-line);
-    border-radius: 1.25rem;
+    border-radius: 6px;
     padding: 0 1.25rem;
-    transition: box-shadow 0.2s;
   }
   .accordion details[open] {
-    box-shadow: var(--shadow-soft);
+    border-color: var(--color-navy-700);
   }
   .accordion summary {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1.05rem 0;
+    padding: 1rem 0;
     font-family: var(--font-display);
     font-weight: 600;
     font-size: 1.0625rem;
-    color: var(--color-teal-900);
+    color: var(--color-navy-900);
     cursor: pointer;
     list-style: none;
   }
@@ -305,9 +277,9 @@
     place-items: center;
     width: 1.75rem;
     height: 1.75rem;
-    border-radius: 999px;
-    background: var(--color-coral-100);
-    color: var(--color-coral-700);
+    border-radius: 4px;
+    background: var(--color-navy-50);
+    color: var(--color-navy-900);
     font-size: 1.25rem;
     line-height: 1;
     transition: transform 0.2s;
@@ -332,7 +304,7 @@
   }
   .prose-page p,
   .prose-page li {
-    color: #243f3d;
+    color: #26354f;
   }
   .prose-page p {
     margin-bottom: 1rem;
@@ -346,7 +318,7 @@
     margin-bottom: 0.4rem;
   }
   .prose-page a {
-    color: var(--color-coral-700);
+    color: var(--color-orange-700);
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -354,7 +326,7 @@
 
   /* The floating call pill must never cover form controls the visitor is using. */
   body:has(input:focus, textarea:focus, select:focus) .mobile-call-bar {
-    display: none !important; /* beats the utility display class on the pill */
+    display: none !important; /* beats the utility display class on the bar */
   }
 }
 

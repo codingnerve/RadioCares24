@@ -26,18 +26,18 @@ export function LegalPage({
       <PageBanner title={title} lead={lead} crumbs={[{ name: title, path }]} />
       <div className="container-page py-12 sm:py-16">
         <div className="mx-auto max-w-3xl">
-          <p className="mb-8 rounded-full bg-sand px-4 py-3 text-sm text-muted">Last updated: {LEGAL_UPDATED}</p>
+          <p className="mb-8 rounded-full bg-mist px-4 py-3 text-sm text-muted">Last updated: {LEGAL_UPDATED}</p>
           <div className="prose-page">{children}</div>
           <p className="mt-12 border-t border-line pt-6 text-sm text-muted">
             Questions about this page? Use the{" "}
-            <Link href="/contact" className="font-semibold text-coral-700 underline underline-offset-2">
+            <Link href="/contact" className="font-semibold text-orange-700 underline underline-offset-2">
               contact form
             </Link>
             {site.email && (
               <>
                 {" "}
                 or email{" "}
-                <a href={`mailto:${site.email}`} className="font-semibold text-coral-700 underline underline-offset-2">
+                <a href={`mailto:${site.email}`} className="font-semibold text-orange-700 underline underline-offset-2">
                   {site.email}
                 </a>
               </>

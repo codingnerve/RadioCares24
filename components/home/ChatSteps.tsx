@@ -5,7 +5,7 @@ import { chatSteps } from "@/lib/content";
 export function ChatSteps() {
   return (
     <section id="how-it-works" aria-labelledby="chat-heading" className="px-3 sm:px-4">
-      <div className="container-page grid gap-10 rounded-[2.5rem] bg-teal-50 !px-6 py-14 sm:!px-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
+      <div className="container-page grid gap-10 rounded-[2.5rem] bg-navy-50 !px-6 py-14 sm:!px-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
         <SectionHeading
           id="chat-heading"
           eyebrow="How it works"
@@ -18,8 +18,8 @@ export function ChatSteps() {
               <div
                 className={`max-w-[88%] px-5 py-3 leading-relaxed shadow-soft ${
                   m.from === "you"
-                    ? "rounded-[1.5rem] rounded-br-md bg-coral-100 text-ink"
-                    : "rounded-[1.5rem] rounded-bl-md bg-teal-800 text-white"
+                    ? "rounded-[1.5rem] rounded-br-md bg-orange-100 text-ink"
+                    : "rounded-[1.5rem] rounded-bl-md bg-navy-800 text-white"
                 }`}
               >
                 <span className="sr-only">{m.from === "you" ? "You: " : "RadioCares24: "}</span>

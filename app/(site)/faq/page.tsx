@@ -37,7 +37,7 @@ export default function FaqPage() {
                 <li key={g.id}>
                   <a
                     href={`#${g.id}`}
-                    className="block rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-teal-900 hover:bg-teal-50 lg:border-0 lg:bg-transparent"
+                    className="block rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-navy-900 hover:bg-navy-50 lg:border-0 lg:bg-transparent"
                   >
                     {g.title}
                   </a>

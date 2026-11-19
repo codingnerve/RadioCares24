@@ -28,7 +28,7 @@ export default function NotFound() {
         <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-[0.9375rem]">
           {servicePages.map((s) => (
             <li key={s.href}>
-              <Link href={s.href} className="font-semibold text-coral-700 underline underline-offset-4">
+              <Link href={s.href} className="font-semibold text-orange-700 underline underline-offset-4">
                 {s.label}
               </Link>
             </li>

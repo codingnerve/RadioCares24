@@ -14,7 +14,7 @@ export function QuickChecks() {
         <ol className="grid gap-4">
           {quickChecks.map((c, i) => (
             <li key={c.title} className="card flex items-start gap-4 !rounded-[1.5rem] p-5">
-              <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-coral-500 font-display text-lg font-bold text-[#2a0f08]">
+              <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-orange-500 font-display text-lg font-bold text-[#2a0f08]">
                 {i + 1}
               </span>
               <div>

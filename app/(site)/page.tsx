@@ -37,7 +37,7 @@ export default function HomePage() {
               <Icon name="shield" className="h-4 w-4" /> Independent help, never your provider
             </p>
             <h1 className="mt-5 text-[2.5rem] leading-[1.05] sm:text-6xl">
-              Car radio stopped playing? <span className="text-coral-700">Let&apos;s sort it out together.</span>
+              Car radio stopped playing? <span className="text-orange-700">Let&apos;s sort it out together.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted">
               Won&apos;t activate, keeps cutting out, channels gone or a renewal that makes no sense? Tell us what the
@@ -57,7 +57,7 @@ export default function HomePage() {
                 </a>
               )}
             </div>
-            <ul className="mt-8 flex flex-wrap gap-2.5 text-sm font-medium text-teal-900">
+            <ul className="mt-8 flex flex-wrap gap-2.5 text-sm font-medium text-navy-900">
               {[
                 "We never ask for card numbers or passwords",
                 "We call you back on the number you give",
@@ -82,22 +82,22 @@ export default function HomePage() {
       {/* Enquiry: split teal / white card */}
       <section id="enquiry" aria-labelledby="enquiry-heading" className="px-3 py-16 sm:px-4 sm:py-24">
         <div className="container-page overflow-hidden !rounded-[2.5rem] bg-white !p-0 shadow-pop ring-1 ring-line lg:grid lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="on-teal bg-teal-800 p-7 sm:p-10">
+          <div className="on-navy bg-navy-800 p-7 sm:p-10">
             <p className="eyebrow">Quick request</p>
             <h2 id="enquiry-heading" className="mt-4 text-3xl !text-white sm:text-4xl">
               Tell us what&apos;s going on
             </h2>
-            <p className="mt-4 text-teal-100">
+            <p className="mt-4 text-navy-100">
               A few details are plenty to get started. The more exactly you can describe the message on the screen, the
               more useful our reply will be.
             </p>
-            <ul className="mt-6 space-y-4 text-[0.9375rem] text-teal-100">
+            <ul className="mt-6 space-y-4 text-[0.9375rem] text-navy-100">
               <li className="flex gap-3">
-                <Icon name="chat" className="mt-0.5 h-5 w-5 flex-none text-coral-100" />
+                <Icon name="chat" className="mt-0.5 h-5 w-5 flex-none text-orange-100" />
                 <span>Include your car, what the radio says and anything you&apos;ve already tried.</span>
               </li>
               <li className="flex gap-3">
-                <Icon name="shield" className="mt-0.5 h-5 w-5 flex-none text-coral-100" />
+                <Icon name="shield" className="mt-0.5 h-5 w-5 flex-none text-orange-100" />
                 <span>
                   We only use your details to answer you. Read the{" "}
                   <Link href="/privacy-policy" className="font-semibold text-white underline underline-offset-2">

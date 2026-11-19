@@ -24,12 +24,12 @@ export function SymptomPicker() {
                   <Icon name={s.icon} />
                 </span>
                 <span className="mt-6 block">
-                  <span className="block font-display text-xl font-semibold leading-snug text-teal-950">{s.label}</span>
+                  <span className="block font-display text-xl font-semibold leading-snug text-navy-950">{s.label}</span>
                   <span className="mt-1 block text-[0.9375rem] text-ink/80">{s.hint}</span>
                 </span>
                 <span
                   aria-hidden="true"
-                  className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/80 text-teal-900 transition-transform group-hover:translate-x-1"
+                  className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/80 text-navy-900 transition-transform group-hover:translate-x-1"
                 >
                   →
                 </span>

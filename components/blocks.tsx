@@ -68,15 +68,15 @@ export function ClosingCta({
 }) {
   return (
     <section aria-labelledby="cta-heading" className="px-3 pb-6 pt-6 sm:px-4">
-      <div className="on-teal container-page relative overflow-hidden rounded-[2.5rem] bg-teal-800 !px-6 py-12 sm:!px-12 sm:py-16">
-        <div aria-hidden="true" className="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-teal-700/60" />
-        <div aria-hidden="true" className="absolute -bottom-24 right-24 h-48 w-48 rounded-full bg-coral-500/25" />
+      <div className="on-navy container-page relative overflow-hidden rounded-[2.5rem] bg-navy-800 !px-6 py-12 sm:!px-12 sm:py-16">
+        <div aria-hidden="true" className="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-navy-700/60" />
+        <div aria-hidden="true" className="absolute -bottom-24 right-24 h-48 w-48 rounded-full bg-orange-500/25" />
         <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div className="max-w-2xl">
             <h2 id="cta-heading" className="text-3xl !text-white sm:text-4xl">
               {title}
             </h2>
-            <p className="mt-3 text-lg text-teal-100">{text}</p>
+            <p className="mt-3 text-lg text-navy-100">{text}</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link href="/contact" className="btn btn-primary">
@@ -118,7 +118,7 @@ export function PageBanner({
       <JsonLd data={breadcrumbLd(all)} />
       <div
         className={`container-page relative overflow-hidden rounded-[2.5rem] !px-6 py-12 sm:!px-12 sm:py-16 ${
-          accent ? `accent-${accent}` : "bg-sand"
+          accent ? `accent-${accent}` : "bg-mist"
         }`}
       >
         <div aria-hidden="true" className="absolute -right-12 -top-16 h-56 w-56 rounded-full bg-white/50" />
@@ -130,7 +130,7 @@ export function PageBanner({
                 <li key={c.path} className="flex items-center gap-2">
                   {i > 0 && <span aria-hidden="true">/</span>}
                   {i === all.length - 1 ? (
-                    <span aria-current="page" className="font-semibold text-teal-900">
+                    <span aria-current="page" className="font-semibold text-navy-900">
                       {c.name}
                     </span>
                   ) : (
@@ -142,7 +142,7 @@ export function PageBanner({
               ))}
             </ol>
           </nav>
-          {eyebrow && <p className="eyebrow !bg-white/70 !text-teal-900">{eyebrow}</p>}
+          {eyebrow && <p className="eyebrow !bg-white/70 !text-navy-900">{eyebrow}</p>}
           <h1 className="mt-3 max-w-3xl text-4xl sm:text-5xl">{title}</h1>
           <p className="mt-5 max-w-2xl text-lg text-ink/85">{lead}</p>
         </div>
@@ -158,7 +158,7 @@ export function Checklist({ items, tone = "check" }: { items: string[]; tone?: "
         <li key={item} className="flex gap-3">
           <span
             className={`mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full ${
-              tone === "check" ? "bg-teal-100 text-teal-800" : "bg-white text-coral-700 ring-1 ring-line"
+              tone === "check" ? "bg-navy-100 text-navy-800" : "bg-white text-orange-700 ring-1 ring-line"
             }`}
             aria-hidden="true"
           >
