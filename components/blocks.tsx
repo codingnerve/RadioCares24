@@ -116,7 +116,7 @@ export function PageBanner({
       <JsonLd data={breadcrumbLd(all)} />
       {photo && (
         <div className="absolute inset-y-0 right-0 hidden w-2/5 lg:block" aria-hidden="true">
-          <Photo slot={photo} className="h-full w-full" sizes="40vw" />
+          <Photo slot={photo} sizing="parent" className="h-full w-full" sizes="40vw" />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/40 to-transparent" />
         </div>
       )}

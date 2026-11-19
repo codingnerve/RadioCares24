@@ -6,7 +6,7 @@ import { site, telHref } from "@/lib/site";
 export function Hero() {
   return (
     <section className="on-navy relative isolate overflow-hidden bg-navy-900">
-      <Photo slot="hero" preload className="absolute inset-0 -z-10" sizes="100vw" />
+      <Photo slot="hero" preload sizing="parent" className="absolute inset-0 -z-10" sizes="100vw" />
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950/95 via-navy-900/80 to-navy-900/35"
