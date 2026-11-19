@@ -32,7 +32,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-dvh antialiased">{children}</body>
+      {/* Browser extensions (e.g. ColorZilla's cz-shortcut-listen) inject attributes on <body> before hydration. */}
+      <body className="min-h-dvh antialiased" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }
