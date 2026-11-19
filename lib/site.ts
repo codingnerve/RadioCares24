@@ -31,7 +31,7 @@ const addressLines: string[] = !addressRaw
 
 export const site = {
   name: "RadioCares24",
-  tagline: "Friendly help for your car's satellite radio",
+  tagline: "Independent help for your car's satellite radio",
   url: (clean(process.env.NEXT_PUBLIC_SITE_URL) || "https://radiocares24.com").replace(/\/+$/, ""),
   /** E.164-style number used in tel: links. Empty when not configured. */
   phone,

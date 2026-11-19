@@ -6,7 +6,7 @@ export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
 export default function AppleIcon() {
-  const filePath = path.join(process.cwd(), "public", "logo-mark.png");
+  const filePath = path.join(process.cwd(), "public", "logo-mark-light.png");
   const base64 = fs.readFileSync(filePath).toString("base64");
   const dataUrl = `data:image/png;base64,${base64}`;
 
@@ -19,7 +19,7 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#ffffff",
+          background: "#0b2a55",
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -66,9 +66,12 @@ changing them**; everything else is read at start-up, so restart after changing 
 
 ## What is built
 
-- **Pages:** `/`, `/radio-activation`, `/signal-support`, `/channel-assistance`, `/subscription-support`,
+- **Pages:** `/`, `/services`, `/how-it-works`, `/resources`, `/radio-activation`, `/signal-support`, `/channel-assistance`, `/subscription-support`,
   `/about`, `/contact`, `/faq`, `/privacy-policy`, `/terms-and-conditions`, `/disclaimer`, a custom 404 and
   error page. No refund page: the site takes no payments.
+- **Photos:** each photo has a named slot in `public/images/` (see `public/images/README.md` for names,
+  ratios and where each appears). Drop a file in with the slot's name and it appears; empty slots show a plain
+  navy panel. Use only photos you own or have licensed, with no baked-in text or provider logos.
 - **Contact form:** validated in the browser and again on the server, then emailed to you. Spam defences:
   hidden honeypot field, minimum-fill-time check, per-IP rate limit, duplicate detection (10 minutes, in
   memory), link limit. The visitor's IP is used in memory for rate limiting only; it is never stored or emailed.
@@ -208,8 +211,8 @@ These were judgment calls made while building, and they need a human decision:
    `NEXT_PUBLIC_BUSINESS_*` variables.
 3. **Support hours and phone number** are empty/fictional until configured. The name contains "24", but the site makes no 24/7 claim anywhere. Never advertise 24/7, instant
    answers or certified specialists unless you can substantiate them.
-4. **Imagery:** the hero is an original vector illustration drawn for this site, and the logo, favicon and share
-   image are original too, so no third-party licensing is involved. Add properly licensed photography if you
-   want it, with descriptive `alt` text.
+4. **Imagery:** add your own photos to `public/images/` (slot names in `public/images/README.md`). Only use
+   photos you own or have licensed, and edit the default alt text in `lib/images.ts` to describe what each photo
+   really shows. The logo, favicon and share image are original.
 5. **Not run in this environment:** live Brevo delivery, Nginx and real TLS. Everything else was exercised
    against the production build.

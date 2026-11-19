@@ -11,6 +11,13 @@ function walk(path: string, out: string[] = []) {
   return out;
 }
 
+function walkAll(path: string, out: string[] = []) {
+  if (statSync(path).isDirectory()) {
+    for (const name of readdirSync(path)) walkAll(join(path, name), out);
+  } else if (/.(tsx?|css|svg)$/.test(path)) out.push(path);
+  return out;
+}
+
 const sources = ["app", "components"].flatMap((t) => walk(join(root, t)));
 
 describe("page copy and contact fallbacks", () => {
@@ -30,6 +37,15 @@ describe("page copy and contact fallbacks", () => {
         if (!/telHref\s*(\?|&&)|if \(!telHref\)/.test(window)) offenders.push(`${relative(root, f)}:${i + 1}`);
       });
     }
+    expect(offenders).toEqual([]);
+  });
+
+  it("has no leftover colours or wording from the old playful look", () => {
+    const files = [
+      ...["app", "components", "lib"].flatMap((t) => walkAll(join(root, t))),
+    ];
+    const legacy = /#fbf6ec|#0e5a57|#083f3d|#ff6a4d|#ffd9cf|friendly help/i;
+    const offenders = files.filter((f) => legacy.test(readFileSync(f, "utf8"))).map((f) => relative(root, f));
     expect(offenders).toEqual([]);
   });
 });

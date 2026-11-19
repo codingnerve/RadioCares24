@@ -6,7 +6,7 @@ const ogImage = {
   url: "/opengraph-image",
   width: 1200,
   height: 630,
-  alt: "RadioCares24: friendly help for your car's satellite radio",
+  alt: "RadioCares24: independent help for your car's satellite radio",
 };
 
 type PageMeta = {

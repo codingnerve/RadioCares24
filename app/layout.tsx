@@ -6,11 +6,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Friendly help for your car's satellite radio`,
+    default: `${site.name} | Independent help for your car's satellite radio`,
     template: `%s | ${site.name}`,
   },
   description:
-    "Friendly, independent help when your car's satellite radio won't activate, drops out, loses channels or sends a confusing renewal notice. Not affiliated with any radio provider.",
+    "Independent help when your car's satellite radio won't activate, drops out, loses channels or sends a confusing renewal notice. Not affiliated with any radio provider.",
   applicationName: site.name,
   openGraph: {
     type: "website",
